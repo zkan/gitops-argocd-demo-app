@@ -31,6 +31,7 @@ jobs:
       - name: Build image
         run: |
           docker build -t zkan/fapi:${GITHUB_SHA::8} .
+          docker build -t zkan/fapi:latest .
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -41,3 +42,4 @@ jobs:
       - name: Push image
         run: |
           docker push zkan/fapi:${GITHUB_SHA::8}
+          docker push zkan/fapi:latest
