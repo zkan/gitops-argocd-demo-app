@@ -31,3 +31,7 @@ jobs:
       - name: Build image
         run: |
           docker build -t zkan/fapi:${GITHUB_SHA::8} .
+
+      - name: Push image
+        run: |
+          docker push zkan/fapi:${GITHUB_SHA::8}
